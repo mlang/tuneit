@@ -1,0 +1,46 @@
+.TH TUNEIT 1 "January 27, 2005"
+.SH NAME
+tuneit \- Simple command line instrument tuner
+.SH SYNOPSIS
+.B tuneit
+.RI [ options ]
+.I captureDevice
+.SH DESCRIPTION
+\fBtuneit\fP plays Vorbis and MPEG audio files while allowing the user
+to choose a new tempo without changing the pitch.
+.PP
+The tempo can be interactively controlled by pressing '+' or '-', incrementing
+and decrementing the playback tempo by 1 percent respectively.
+Use "q" to stop playback.
+.SH OPTIONS
+\fByatm\fP accepts the following options:
+.TP
+.BR  -b
+Begin playing at
+.IR time ,
+given as an offset from the beginning of the file
+.RB ( 0:00:00 ).
+.TP
+.BR  -e
+Stop after
+.IR duration
+seconds of audio have been decoded.
+.TP
+.BR  -t
+Specify initial tempo as a floating point value, 1.0 is the default.
+.TP
+.BR  -q
+Inhibit usual output.
+.TP
+.B  -v, --verbose
+Print more information.
+.TP
+.B \-h, \-\-help
+Show summary of options.
+.TP
+.B \-V, \-\-version
+Show version of program.
+.SH "SEE ALSO"
+.BR jackd (1), amixer (1). 
+.SH AUTHOR
+Mario Lang <mlang@delysid.org>.
