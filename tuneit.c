@@ -486,7 +486,7 @@ jackInit ()
 {
   ringBuffer = jack_ringbuffer_create(sizeof(jack_default_audio_sample_t) * 16384);
   memset(ringBuffer->buf, 0, ringBuffer->size);
-  if ((jackClient = jack_client_new(PACKAGE_NAME)) == 0) {
+  if ((jackClient = jack_client_new(CMAKE_PROJECT_NAME)) == 0) {
     fprintf(stderr, "JACK server not running?\n");
     exit(EXIT_FAILURE);
   }
