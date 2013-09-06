@@ -1,6 +1,6 @@
 AC_PREREQ(2.5)
 AC_INIT([tuneit], [0.3], [Mario Lang <mlang@delysid.org>])
-AM_INIT_AUTOMAKE(tuneit, 0.3)
+AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([src/tuneit.c])
 AM_CONFIG_HEADER(config.h)
 AC_PROG_CC
