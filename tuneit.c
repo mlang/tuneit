@@ -55,8 +55,13 @@ displayFrequency (double freq)
   nfreq = freqs[note];
   while (nfreq/freq > D_NOTE_SQRT) nfreq /= 2.0;
   while (freq/nfreq > D_NOTE_SQRT) nfreq *= 2.0;
-  printf("Note %-2s (%8.3fHz): %+3.f cents (%8.3fHz)      \r",
-	 notes[note], nfreq, 1200*(log(freq/nfreq)/LOG_2), freq);
+  double cents = 1200*(log(freq/nfreq)/LOG_2);
+  char buffer[21];
+  for (i = 0; i<20; ++i) buffer[i] = '-';
+  buffer[10] = '+';
+  buffer[(int)((cents+50)/5)] = '|';
+  printf("Note %-2s (%8.3fHz): %+3.f cents (%8.3fHz)  %.20s\r",
+	 notes[note], nfreq, cents, freq, buffer);
   fflush(stdout);
 }
 
